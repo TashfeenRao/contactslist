@@ -1,22 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class contactList extends Component {
-    render() {
-        return (
+const ContactList = (props) => {
+    return (
             <ol>
-                {this.props.contacts.map((person) => (
-                    <li key={person.id} className='contact-list-item'>
-                        <div className='contact-avatar' style={{backgroundImage: `url(${person.avatarURL})`}}>
-                        </div>
-                        <div className='contact-details' >
-                            <p>{person.name}</p>
-                            <p>{person.handle}</p>
-                        </div>
-                        <button className='contact-remove'>Remove</button>
-                    </li>
-                ))}
-            </ol>
-        )
-    }
+            {props.contacts.map((person) => (
+                <li key={person.id} className='contact-list-item'>
+                    <div className='contact-avatar' style={{backgroundImage: `url(${person.avatarURL})`}}>
+                    </div>
+                    <div className='contact-details' >
+                        <p>{person.name}</p>
+                        <p>{person.handle}</p>
+                    </div>
+                    <button className='contact-remove'>Remove</button>
+                </li>
+            ))}
+        </ol>
+    );
 }
-export default contactList;
+export default ContactList;
