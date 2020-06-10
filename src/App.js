@@ -25,10 +25,17 @@ import ContactList from './contactList';
         }
       ]
     }
+    removeContact = (contact) => {
+      this.setState((currentState) => ({
+        contacts: currentState.contacts.filter(c => {
+          return c.id !== contact.id
+      })
+      }))
+    }
     render() {
       return (
         <div className="App">
-          <ContactList contacts={this.state.contacts}/>
+          <ContactList contacts={this.state.contacts} removeButton={this.removeContact}/>
         </div>
       );
     }

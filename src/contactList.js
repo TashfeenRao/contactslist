@@ -11,7 +11,7 @@ const ContactList = (props) => {
                         <p>{person.name}</p>
                         <p>{person.handle}</p>
                     </div>
-                    <button className='contact-remove'>Remove</button>
+                    <button className='contact-remove' onClick={() => props.removeButton(person)}>Remove</button>
                 </li>
             ))}
         </ol>
