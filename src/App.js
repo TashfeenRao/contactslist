@@ -27,9 +27,17 @@ import CreateContact from './createContact';
       return (
         <div className="App">
           {this.state.screen === 'list' && 
-              <ContactList contacts={this.state.contacts} removeButton={this.removeContact}/>
-          }
-          {this.state.screen === 'create' && <CreateContact />}
+              (<ContactList 
+                contacts={this.state.contacts} 
+                removeButton={this.removeContact}
+                onNavigate = {() => {
+                  this.setState(() => ({
+                    screen: 'create'
+                  }))
+                }}
+                />
+              )}
+          {this.state.screen === 'create' && (<CreateContact />)}
           
         </div>
       );
