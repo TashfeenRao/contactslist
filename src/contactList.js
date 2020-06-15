@@ -40,8 +40,7 @@ class ContactList extends Component {
                     />
                     <Link
                         to='/create'
-                        className='add-contact'
-                    >
+                        className='add-contact'>
                         Add Contact
                     </Link>
                 </div>
